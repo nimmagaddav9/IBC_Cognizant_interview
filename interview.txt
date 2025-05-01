@@ -1,0 +1,40 @@
+Technical Questions:
+1. Can you explain the Backend for Frontend (BFF) architecture and why it is useful? 
+Answer: The BFF architecture is designed to create a dedicated backend service specifically tailored for frontend needs. 
+It helps optimize API responses and reduces frontend complexity by ensuring that data is formatted in a way that best 
+suits the UI. This minimizes network calls and improves performance by delivering only the required data.
+
+2. How do React hooks improve performance compared to class components? 
+Answer: React hooks allow functional components to manage state and side effects without using class components. 
+They help eliminate unnecessary re-renders and optimize performance by reducing the complexity of lifecycle methods. 
+Additionally, useMemo and useCallback help prevent redundant computations and function recreations.
+
+3. What is the difference between a REST API and GraphQL? 
+Answer: REST API follows a predefined structure with multiple endpoints for different resources, 
+while GraphQL allows clients to request specific data in a single query. 
+GraphQL minimizes over-fetching and under-fetching issues, making it more flexible for frontend applications that
+require precise data retrieval.
+
+4. How do you handle authentication in a Node.js application? 
+Answer: Authentication in Node.js can be implemented using JWT (JSON Web Token), OAuth, or session-based authentication. JWT is widely used for stateless authentication because it allows token-based authorization, making it scalable for microservices architecture.
+
+5. What strategies do you use for performance optimization in React.js applications? Answer: Some strategies include:
+
+Using lazy loading (React.lazy and Suspense).
+
+Memoizing expensive computations with useMemo.
+
+Optimizing re-renders with useCallback and React.memo.
+
+Implementing virtualization for large lists (e.g., react-window).
+
+Avoiding unnecessary state updates and reconciliation.
+
+Behavioral Questions:
+6. Can you describe a time when you had to debug a complex production issue? Answer: In a previous role, I encountered a performance bottleneck in a React application due to excessive state updates. Using React DevTools and profiling, I identified unnecessary re-renders caused by deeply nested components. By refactoring and optimizing state management, I reduced re-renders by 40%, significantly improving application responsiveness.
+
+7. How do you handle conflicts in a collaborative development environment? Answer: I believe in proactive communication. When facing conflicts, I prefer discussing issues openly, understanding the perspectives of team members, and finding a solution that benefits everyone. In version control conflicts, I ensure proper branching strategies and use Git rebase or merge to resolve issues efficiently.
+
+8. How do you keep yourself updated with new JavaScript and React trends? Answer: I regularly follow industry blogs, documentation, and official React and Node.js updates. I also engage in online communities, attend webinars, and experiment with new libraries to stay current with evolving best practices.
+
+Would you like more specific scenario-based questions tailored to this role? Let me know how I can assist further!
