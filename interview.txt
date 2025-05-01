@@ -38,3 +38,74 @@ Behavioral Questions:
 8. How do you keep yourself updated with new JavaScript and React trends? Answer: I regularly follow industry blogs, documentation, and official React and Node.js updates. I also engage in online communities, attend webinars, and experiment with new libraries to stay current with evolving best practices.
 
 Would you like more specific scenario-based questions tailored to this role? Let me know how I can assist further!
+
+
+-----------------------------
+General Front-End Questions
+
+Q1: What front-end frameworks have you worked with, and which is your preference? Why?
+A:
+I've worked extensively with React and have also used Vue.js in previous projects. 
+React is my preference due to its component-based architecture, rich ecosystem (like Redux, React Query), and strong community support. 
+It allows for high flexibility and composability, which suits complex, scalable apps.
+
+Q2: How do you ensure your UI is responsive and accessible?
+A:
+I use mobile-first CSS, media queries, and flexible grids/layouts (e.g., CSS Grid, Flexbox) to ensure responsiveness. 
+For accessibility, I follow WCAG guidelines, use semantic HTML, implement ARIA roles when needed, and test with screen readers and keyboard navigation.
+
+🔹 Backend for Frontend (BFF) Specific Questions
+
+Q3: What is a Backend for Frontend (BFF) pattern, and why is it useful?
+A:
+BFF is an architectural pattern where a dedicated backend service is created specifically to serve the needs of a frontend application. 
+It abstracts and aggregates data from multiple backend services, shaping it in a way that best suits the front end. 
+This helps decouple the front end from backend changes, improves performance by reducing over-fetching/under-fetching, and allows for better API design tailored 
+to UI needs.
+
+Q4: Can you walk us through how you've implemented a BFF in a past project?
+A:
+In a recent React + Node.js project, we built a BFF using Express.js. 
+The BFF aggregated data from several microservices (user profile, analytics, notifications), transformed it into a UI-optimized structure, and handled authentication
+middleware. This enabled the front end to consume a single endpoint rather than managing complex multi-service calls.
+
+Q5: How do you manage API contracts between the frontend and BFF?
+A:
+I prefer using TypeScript with shared interfaces between the BFF and frontend to avoid inconsistencies. I also document APIs using OpenAPI/Swagger,
+and use tools like Postman or Insomnia for testing. If we're using GraphQL, schema-driven development helps enforce the contract.
+
+Q6: How would you secure a BFF layer?
+A:
+Security starts with auth and authz, typically using JWT tokens or OAuth. 
+I validate tokens at the BFF level, sanitize inputs to avoid injection attacks, use HTTPS, rate-limiting, and ensure headers like CORS, 
+Content-Security-Policy, and X-Frame-Options are correctly configured.
+
+
+🔹 System Design & Performance
+
+Q7: How do you ensure your BFF layer doesn’t become a bottleneck?
+A:
+I implement caching (e.g., Redis) for frequent reads, use asynchronous non-blocking code, and minimize the number of dependent service calls per request.
+Proper logging and monitoring (e.g., using tools like Prometheus, Grafana, or New Relic) help identify and optimize slow paths.
+
+Q8: If the backend APIs change, how does your BFF handle it without breaking the frontend?
+A:
+By isolating changes behind the BFF layer, we prevent breaking changes from reaching the front end. 
+I version the BFF API if necessary and use feature flags or fallbacks to handle partial data gracefully.
+When possible, I also keep backward compatibility in the BFF contracts.
+
+🔹 Testing & Quality Assurance
+
+Q9: How do you test BFF endpoints?
+A:
+I write unit tests (e.g., with Jest) for logic and integration tests to ensure correct interaction with backend services. For full E2E testing, 
+I might use Cypress or Playwright to simulate user flows and validate the entire stack.
+
+
+🔹 Behavioral
+
+Q10: Describe a time when you improved performance or developer experience in your BFF implementation.
+A:
+In one project, the front end was making multiple API calls resulting in slow page loads. 
+I refactored the architecture to consolidate calls in the BFF using batch requests and caching, which reduced load times by ~40%. 
+I also added automatic Swagger documentation, improving developer onboarding and internal API adoption.
