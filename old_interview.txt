@@ -1,0 +1,175 @@
+Cognizant old interview Q & Answer
+
+
+1. could you please explain what is scope in JavaScript? what's the difference between block scope and functional scope
+
+In JavaScript, scope refers to the accessibility or visibility of variables. It defines where in the code a variable can be accessed.
+There are primarily two types of scope relevant here:
+1. Functional Scope (Function Scope):
+Variables declared using var are function-scoped.
+
+2. Block Scope:
+Variables declared with let and const are block-scoped.
+
+| Aspect                | Functional Scope (`var`)     | Block Scope (`let`, `const`)        |
+|----------------------|------------------------------|-------------------------------------|
+| Defined by           | Functions                    | Code blocks (`{}`)                  |
+| Variable lifecycle   | Exists throughout the function | Exists only within the block        |
+| Common mistake       | Hoisting + unexpected sharing | Prevents variable leakage           |
+
+2. What are new features in ECMASCRIPT or ES6?
+let, const, arrow function, object destructring, promises.
+
+3. What is difference between arrow function and normal function?
+
+| Feature            | Normal Function            | Arrow Function                  |
+|--------------------|-----------------------------|----------------------------------|
+| Own `this`         | ✅ Yes                      | ❌ No (inherits from parent)     |
+| Can use `arguments`| ✅ Yes                      | ❌ No                            |
+| Constructor        | ✅ Yes                      | ❌ No                            |
+| Syntax             | Verbose                     | Concise                          |
+
+
+4. function xyz(){
+    if(true){
+        var b = 25
+        const a = 23
+    }
+    console.log("b", b);
+    console.log("a", a);
+}
+
+xyz();
+
+output:
+=====================
+
+b 25
+a refernece error
+ERROR!
+/tmp/muKNQxCuWY/main.js:7
+    console.log("a", a);
+                     ^
+
+ReferenceError: a is not defined
+
+5. function xyz(){
+    if(true){
+        var b = 25
+        console.log("a", a);
+        const a = 23
+    }
+    console.log("b", b);
+    
+}
+
+xyz();
+
+output:
+==================
+ERROR!
+/tmp/tlMmvXxpfE/main.js:4
+        console.log("a", a);
+                         ^
+
+ReferenceError: Cannot access 'a' before initialization
+
+6. What is promise vs async await?
+promise implement asynchronous operation in JS.
+async await - when we declare async infront of function, commonly use API calls
+
+7. how to call multiple api calls simunatenously?
+if there are dependent on 1 to another, response of once we can call next api. step by step
+promise.all() we can use.
+
+8. if 1 API is error? will we get response.
+no
+
+9. error handling async await
+try catch
+
+10. Debouncing / Throttling
+debouncing: if search for name=vijay then insteading searching for single character after setInterval it is searched.limit the rate
+throttling: when we resize the window, 200 milliseconds it take.
+
+11. syntax for debouncing and throttling
+
+12. what are web api? explain
+
+setTimeout, setInterval
+
+13. have you used localStorage and session Storage?
+
+14. have you used Fetch --> we need to convert .json formart
+
+15. api call with axios or fetch
+axios no need to convert to json
+fetch is native method.
+
+16. if fetch is available why to use another library
+fetch has some methods
+
+17. difference between localstorage and session storage?
+
+
+18. Have you started writing unit test cases?
+
+
+19. what are hooks? why there is need to have hook. different type of hooks
+
+hooks are introduced in  functional components
+
+useState - store data, useEffect, useMemo, useCallback, context API
+
+20. have you worked on class component?
+
+21. write code to increment and decrement the count using codesandbox?
+
+22. What is context API? 
+like redux, state for whole application  parent --> child method context is used.
+
+23. why we need to use redux when context API is there?
+redux is predictable state container. large application, clean code.
+
+24. pillars of redux? 
+action: 
+useDispatch : send it to reducer.
+reducer : initial state, increment, update state
+useSelector: read data from redux store.
+initial state
+
+25. what is advantage of redux toolkit?
+advance manner, simplify the code. we have extra reducer, useDispatch
+
+26. how virtual DOM help to increase performance?
+copy of real DOM
+
+27. if we don't pass key? warning. we need to use pass unique ID. which item has added, updated. 
+
+28. performance optimization: useMemo, useCallback, React.memo
+if we are heavy task execution.
+
+29. accessibility have you worked? physically challenged.
+
+30. what is DOCTYPE declaration in HTML?
+after HTML5, before HTML4 top of page document type, we have meta tag, improve performance.
+
+31. what is meta tag used? keyword
+
+31. What are attributes? title, keyword, description.
+
+32. gaming for mobile? desktop
+
+33. could you write syntax for media queries width is between 540-940
+
+34. CSS box model? layout  Content, padding, border and margin
+
+35. What is flexbox? to align elements vertically and horizontal without float.
+
+36. justify-content(align horizontally): center, align-item(align item veritcally)
+
+
+
+
+
+
