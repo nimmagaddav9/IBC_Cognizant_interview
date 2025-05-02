@@ -169,6 +169,713 @@ after HTML5, before HTML4 top of page document type, we have meta tag, improve p
 36. justify-content(align horizontally): center, align-item(align item veritcally)
 
 
+===========================================================================================
+30 minute interview
+
+Senior React.js Developer Interview Question and Answers.
+
+1. Tell me about yourself?
+
+I am a core UI Developer with 12+ years of experience building .com websites for different organizations using HTML5, CSS3, JavaScript, Angular 18, React.js, and Redux. 
+In the past 2 years, I worked on the React migration team, where I converted the .net pages to react on united.com. 
+Frontend is React, and used ATMOS (Own library) components used company wide.
+
+Worked on Security features for users where they can manage there account like Forgot password, Forgot MileagePlus number, 
+security questions, Sign-in features, Miles-Pooling, United Club pass,  Recent Activity, dashboard updates and 
+KTN(Known Traveler Number), Accessibility guidelines features on united.com.
+
+used middleware such as redux-saga to handle asynchronous tasks such as API calls, data fetching, and impure actions in a more organized and efficient way.
+
+The new initiative worked on Miles-Pooling( points you get after traveling), TSA Precheck, Account security and management features, and Under18.
+
+Previously worked with Accelerator team for Visa Inc. remediation of MBDA modules like Application Management, Account Management, Portfolio Management, Analytics, Recurring billing, Virtual Terminal, etc for bank users like Wells Fargo,  Bank of America, etc
+
+Capital Group worked on DAVIS Project. Davis stands for Data visualization where we build different highcharts using react and integrate into the AEM., the backend is Java. Previously I worked on Creative Workbench, a writing tool where articles are published on capital group websites.
+
+At Cerner Corporation worked on the medical examination forms.
+
+In Office Depot worked on black Friday reporting.
+
+Satinos Technologies created a tax portal and a schoomin website for the Vignan schools.
+
+
+2. React Hooks: Hooks are functions that enable functional components to manage state and lifecycle features, providing a more concise and expressive way to handle component logic.
+
+3. What are the popular hooks in react and explain it's usage?
+
+useState: Manages state in functional components.
+useEffect: Manages side effects in functional components.
+useContext: Consumes context in functional components.
+useReducer: Manage state with a reducer function, For More complex state management.
+useRef: Accesses DOM elements or stores mutable values.
+useCallback: performance improvement usecase
+useMemo: performance improvement usecase.
+
+4. How can you Optimize Performance in React application?
+1. Memoization with useMemo and useCallback:  Use this hooks to memoize values and, reducing unnecessary recalculations.
+2. Optimizing Renders with React.Fragment: Use it to avoid unnecessary wrapper elements that could cause additional DOM nodes.
+3. Lazy loading with React.lazy: Use it to load components lazily, reducing the intial bundle size and imporving intial loading performance.
+4. Code splitting: Employ code splitting to divide your application into smaller chunks that are loaded on demand, improving initial load times.
+5. Optimizing Images and Assets:  Compress and optimize images, use responsive images and leverage lazy loading for images to reduce network and rendering overhead.
+
+
+5.  Difference between virtual DOM and real DOM?
+Suppose line of code is changed , processing is done on particular line. It will process the whole code in real DOM. Virtual DOM is faster.
+
+6. Redux is a predictable state container for JavaScript applications. 
+It helps to you write applications, run in different environments and easy to test. 
+And simply we called as Redux is a state management tool.
+Components in redux
+Actions -->Input Parameters Ex: Deposit and Withdraw money from ATM
+Store --> Main Server
+Reducers --> Business Logic
+Dispatch --> Request
+Subscribe --> Response
+State --> Store Component Data
+
+7. What is state management in react application? 3rd party module, with redux.
+Redux? We have redux thux, redux saga.
+What is redux thunx, redux saga? Inorder to manipulate the store Actions(request, response).
+Redux thunx is an outdated library.
+Saga is Advanced library.
+
+Why Saga? In sagas debouncing is available by default.
+
+8. Explain React lifecycle methods?
+
+React component lifecycle has three categories – Mounting, Updating and Unmounting.
+Mounting – Birth of your component
+Update – Growth of your component
+Unmount – Death of your component
+
+React Component LifeCycle Hooks
+
+        1. constructor
+        2. componentWillMount()
+        3. render()
+        4. componentDidMount()
+        5. componentWillReceiveProps()
+        6. shouldComponentUpdate()
+
+        // component kill methods
+
+        7. componentWillUpdate()
+        8. componentDidUpdate()
+        9. componentWillUnmount()
+
+Recently Added LifeCycle Hooks
+
+Context API, useEffect, useState --- Newly added version by version
+
+Explanation:
+
+# Constructor()
+
+        constructor will execute at booting time of component --constructor will execute only once
+        Define state in constructor
+
+# componentWillMount()
+
+        componentWillMount() will execute after constructor
+        componentWillMount() will execute only once
+        in general we will do the initial modifications in state
+        in general we will set global parameters like width, height
+
+# render()
+
+        after componentWillMount() automatically render() function will execute
+        render() is mandatory lifecycle hook(main lifecycle hook)
+        in general, we will place presentation logic in render()
+        when ever change detected in state or props automatically this lifecycle hooks will execute
+
+# componentDidMount()
+
+        after render function immediately componentDidMount() life cycle hook will execute
+        in general we will make asynchronous calls in ComponentWillMount()
+        this is recommended state to change the state of component
+
+# componentWillReceiveProps()
+
+        when component will receive props from redux
+
+# shouldComponentUpdate()
+
+        if we want to update the state return "true" else "false"
+
+# UNSAFE_componentWillUpdate()
+
+        death method --> perform cleanup operations
+
+# componentDidUpdate()
+
+        if we integrate any third party UI elements
+        plugin logic will write here
+
+# componentWillUnmount()
+
+        Before killing the component componentWillUnmount is executed.
+        death method --> perform cleanup operations
+
+
+9. Call() -- if we want to create second memory location will interact with 1st memory location.
+
+Apply – if we want to pass array instead of independent parameter
+
+Bind() - merge memory location 1 and memory location 2 -->merge 2 memory locations-->new memory location.
+
+What is the USE? Call function advanced function APPLY, call and apply advanced version is bind().
+Purpose is same. Call, bind, apply –used to access 2 objects in different memory location
+
+10. What is the current ES version? ES6 -2015, ES9, JS24
+
+11. What are different positions in CSS ?
+The position property specifies the type of positioning method used for an element.
+
+There are five different position values:
+
+static: HTML elements are positioned static by default.
+
+relative: An element with position: relative; is positioned relative to its normal position.
+
+fixed: An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. 
+The top, right, bottom, and left properties are used to position the element.
+
+absolute: An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+
+sticky: An element with position: sticky; is positioned based on the user's scroll position.
+
+
+12. What is shallow copy and deep copy? 
+
+A shallow copy creates a new object with references to the same memory locations as the original object for nested properties. 
+This means changes to nested objects in the copy will affect the original object.
+
+javascript example: 
+const originalObject = { a: 1, b: { c: 2 } };
+const shallowCopy = { ...originalObject };
+
+shallowCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 3
+
+Deep Copy
+A deep copy creates a new object with new memory locations for all nested properties, ensuring changes to the copy don't affect the original object.
+
+JavaScript Example:
+
+javascript
+const originalObject = { a: 1, b: { c: 2 } };
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+deepCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 2
+========================================================================================================================================================
+
+First Round: 30 minute React and Javascript.
+
+1. current Project?
+
+I am a core UI Developer with 12+ years of experience building .com websites for different organizations using HTML5, CSS3, JavaScript, Angular 18, React.js, and Redux. 
+In the past 2 years, I worked on the React migration team, where I converted the .net pages to react on united.com. 
+Frontend is React, and used ATMOS (Own library) components used company wide.
+
+Worked on Security features for users where they can manage there account like Forgot password, Forgot MileagePlus number, 
+security questions, Sign-in features, Miles-Pooling, United Club pass,  Recent Activity, dashboard updates and 
+KTN(Known Traveler Number), Accessibility guidelines features on united.com.
+
+used middleware such as redux-saga to handle asynchronous tasks such as API calls, data fetching, and impure actions in a more organized and efficient way.
+
+The new initiative worked on Miles-Pooling( points you get after traveling), TSA Precheck, Account security and management features, and Under18.
+
+Previously worked with Accelerator team for Visa Inc. remediation of MBDA modules like Application Management, Account Management, Portfolio Management, Analytics, Recurring billing, Virtual Terminal, etc for bank users like Wells Fargo,  Bank of America, etc
+
+Capital Group worked on DAVIS Project. Davis stands for Data visualization where we build different highcharts using react and integrate into the AEM., the backend is Java. Previously I worked on Creative Workbench, a writing tool where articles are published on capital group websites.
+
+At Cerner Corporation worked on the medical examination forms.
+
+In Office Depot worked on black Friday reporting.
+
+Satinos Technologies created a tax portal and a schoomin website for the Vignan schools.
+
+2. advantages of react?
+    * Simple to build Single Page Application(by using Components - component based architecture).
+    * React is cross platform and open source(Free to use)
+    * Lightweight and very fast(Virtual DOM)
+    * Large Community and Ecosystem.
+    * Testing is easy.
+
+3. hooks? some examples useState, useEffect?
+
+    * React Hooks are inbuilt functions provided by React that allow functional components to useState and lifecycle features.
+    * Before Hooks, class components lifecycle methods were used to maintain state in React Applications.
+    * To use React hook first we first have to import it from React Library.
+
+The useState hook enables functional components to manage state.
+useState() working: useState() function accept the initial state value as the parameter and returns an array with 2 elements:
+1. The first element is the current state value(count in this code).
+2. Second element is the function that is used to update the state(setCount in this code).
+The concept of assign array elements to individual variables is called array destructing.
+
+The useEffect Hook in React is used to perform side effects in functional components.
+For example, data fetching from API, subscriptions or any other operation that needs to be performed after the component has been rendered.
+
+4. what is redux?
+
+//state management(centralized store)
+Redux is a predicatable state container for JavaScript apps. 
+Redux acts as centralized store for state management in your application.
+Advantages:
+Single Source of Truth: The State of the application is stored in a single object.
+State is Read-Only: The only way to change the state is to emit an action, an object describing what happened.
+Changes are made with Pure Functions: Reducers are pure functions that take the previous state and an action, return the next state.
+
+5. what is synthetic event?
+
+a synthetic event is a cross-browser wrapper around the browser's native event. 
+It combines the behavior of supported events of different browsers into one API, ensuring that events work identically across all browsers.
+
+6. Event delegation?
+Event delegation is a technique in JavaScript where a single event listener is attached to a parent element to handle events for
+all of its child elements. 
+Instead of attaching individual event listeners to each child, the parent element "delegates" the handling of events to its children. 
+This approach leverages event bubbling, where an event on a child element propagates up the DOM tree to its parent elements. 
+
+
+7. Why is javascript is synchronous not asynchronous?
+JavaScript is primarily synchronous, running one piece of code at a time. 
+However, it can handle asynchronous tasks using callbacks, promises, and async/await. 
+This allows JavaScript to remain responsive by doing other work while waiting for time-consuming operations to finish.
+
+8. What is the current ES version? ES6 -2015, ES9, JS24
+
+9. object methods?
+object.keys
+object.values
+object.freeze - we can't modify or delete from object
+object.seal - we can modify but can't delete or add.
+
+10. how to add properties to object?
+object.assign()
+
+11. suppose car has color, model and features, add some more properties of basic car?
+
+12. create a object in javascript in jsfiddle?
+
+const city ={
+    name: 'austin',
+    population: '10million',
+}
+city.street = '';
+
+13. object.prototype?
+
+14. coding question:
+const fruits = [{name: 'apples', quantity: 500},
+{name: 'bananas', quantity: 500},
+{name: 'oranges', quantity: 150},
+{name: 'kiwi', quantity: 150}];
+
+show output: [[apples, bananas], [oranges, kiwi]];
+
+
+//hint: use reduce
+
+15. how browser knows javascript? JavaScript is preinstalle in browser.
+if you write in typescript? it will convert the typescript to javascript.
+
+use TS compiler
+
+16. hoisting?
+
+Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their respective scopes during the compilation phase, before the code is executed. 
+This means that regardless of where variables and functions are declared in the code, they are treated as if they are declared at the beginning of their scope.
+
+example:
+console.log(x); //output: undefined
+var x = 5;
+console.log(x); //output: 5
+
+the declaration of x is hoisted to the top, but not its initialization. That's why the first `console.log outputs undefined.
+
+let and const declarations are hoisted but not initialized. This leads to a "temporal dead zone" where accessing the variable before its declaration results in a ReferenceError.
+
+console.log(y);
+// throws ReferenceError: Cannot access 'y' before "initialization"
+let y = 10;
+
+
+
+17. async/ await
+
+The purpose of async/await is to simplify the syntax for working with Promises, making asynchronous code easier to write and read. 
+It allows you to write asynchronous code that looks and behaves more like synchronous code.
+
+// function that returns a promise
+function fetchData() {
+    return new Promise((resolve)=>{
+        setTimeout(()=> resolve("data fetched"), 2000);
+    });
+}
+
+// using async/await
+async function getData() {
+    console.log("fetching data...");
+    const result = await fetchData();
+    console.log(result);
+    console.log("Data processing complete");
+}
+
+getData();
+
+// output:
+fetching data...
+data fetched
+Data processing complete
+
+18. event bubbling? event capturing?
+
+DOM elements are HTML Element. Parent , Child, Subchild.
+
+Click Subchild -->Subchild, Child, Parent will execute.
+
+The Events are propagating from down to top is called Event Bubbling.
+
+
+What is Event Capturing? If I click parent only parent will execute. If I click child -->parent, child will execute. 
+Propagation of Events from top to bottom is called Event Capturing.
+
+React.js interview
+
+19. what total experience in react.js till now? 12+
+
+20. Which redux? redux-Toolkit:
+
+Redux is a predicatable state container for JavaScript apps. Redux acts as centralized store for state management in your application.
+
+Redux Toolkit is an offical, opinionated toolset for efficient Redux development.
+It simplifies store setup, reduces boilerpate, and includes useful tools like createSlice and createAsyncThunk.
+
+import {configureStore} from '@reduxjs/toolkit'; //import
+const store = configureStore({
+    reducer:{
+        //pass all reducers
+    },
+});
+
+export default store;
+
+=========================================================================================================================================
+
+Interview Question and answers
+
+1. Tell me about yourself.
+
+2. Which version of react? v16.8
+
+3. How to optimize performance in react ?
+
+1. Memoization with useMemo and useCallback:  Use this hooks to memoize values and, reducing unnecessary recalculations.
+2. Optimizing Renders with React.Fragment: Use it to avoid unnecessary wrapper elements that could cause additional DOM nodes.
+3. Lazy loading with React.lazy: Use it to load components lazily, reducing the intial bundle size and imporving intial loading performance.
+4. Code splitting: Employ code splitting to divide your application into smaller chunks that are loaded on demand, improving initial load times.
+5. Optimizing Images and Assets:  Compress and optimize images, use responsive images and leverage lazy loading for images to reduce network and rendering overhead.
+
+
+4. What is difference between Promise.all() and race?
+
+Promise.all() waits for all promises to settle (either resolve or reject), and resolves with an array of all resolved values or rejects as soon as one promise rejects.
+
+Promise.race() resolves or rejects as soon as the first promise settles (either resolves or rejects).
+
+5. difference between useMemo and useCallback?
+
+Key Differences:
+
+    useMemo: Memoizes the result of a computation (value). It helps with performance optimization by avoiding recalculating expensive values.
+
+    useCallback: Memoizes the function itself, ensuring the function reference remains the same between renders unless its dependencies change. 
+    It's mostly useful when passing functions as props to avoid unnecessary re-renders in child components.
+
+6. Have you used async/await? use?
+
+async: Declares a function that will always return a Promise.
+
+await: Pauses the execution of the async function until the Promise resolves or rejects.
+
+7. What are hooks in react? use?
+
+useState: Manages state in functional components.
+useEffect: Manages side effects in functional components.
+useContext: Consumes context in functional components.
+useReducer: Manage state with a reducer function, For More complex state management.
+useRef: Accesses DOM elements or stores mutable values.
+useCallback: performance improvement usecase
+useMemo: performance improvement usecase.
+
+8. did you work on custom hooks?
+
+Custom Hooks in React are JavaScript functions that allow you to reuse stateful logic across multiple components.
+They enable you to extract and share common logic without repeating code, promoting code reusability and separaration concerns.
+
+c1, c2, c3, c4, c5--> one custom hooks --> state
+Advantages:
+Code Reusability: Custom hooks allow you to reuse stateful logic without duplicating code.
+Separation of Concerns: They help spearate the logic from the component's structure, making the code more modular and easier to maintain.
+Cleaner Code: By Moving common logic into custom hooks, components become cleaner and more focused on their core responsibilites.
+
+9. Can we useHelp() hook instead of custom hook?
+
+If useHelp() is a custom hook you've created or imported, then yes, you can use it just like any other hook.
+
+Custom hooks don't replace built-in hooks; they are for organizing reusable logic. You can still use built-in hooks inside your custom hooks if needed.
+
+10. what is callback?
+
+Passing "one function" to "another function" as an argument called as "CallBack"
+
+11. what is callback hell?
+
+Callback hell" refers to a situation in programming where multiple asynchronous operations are handled using nested callback functions,
+creating a complex and difficult-to-read code structure, often resembling a pyramid shape; 
+to avoid it, use techniques like Promises and the async/await syntax to manage asynchronous operations in a more linear fashion,
+making your code cleaner and easier to maintain. 
+
+12. have you worked on NodeJS?
+
+Node.js is commonly used for backend development, APIs, real-time applications (like chat apps), and more. 
+It leverages non-blocking, event-driven architecture, making it ideal for I/O-heavy tasks like handling HTTP requests, reading files, and querying databases.
+
+I can help with many aspects of Node.js development, including:
+
+    Creating web servers using frameworks like Express.js.
+
+    Working with databases (like MongoDB, MySQL, PostgreSQL) through libraries like mongoose or sequelize.
+
+    Building APIs (RESTful APIs, GraphQL, etc.).
+
+    Managing asynchronous operations (with callbacks, promises, and async/await).
+
+    Implementing middleware for routing and error handling.
+
+    Integrating third-party services (like payment gateways, email services, etc.).
+
+    Optimizing performance (using clustering, worker threads, etc.).
+
+    Deploying Node.js applications (on cloud platforms like AWS, Heroku, etc.).
+
+13. difference between fetch and axios module?
+
+fetch is a built-in JavaScript API that returns a Promise. It is native to the browser and doesn't require installing any additional libraries.
+
+axios is a third-party library that also returns a Promise. It needs to be installed via npm or yarn (e.g., npm install axios).
+
+Fetch Example:
+
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+Axios Example:
+
+axios.get('https://api.example.com/data')
+  .then(response => console.log(response.data))
+  .catch(error => console.error('Error:', error));
+
+
+14. call api in react syntax?
+
+axios.get('https://api.example.com/data')
+  .then(response => console.log(response.data))
+  .catch(error => console.error('Error:', error));
+
+15. what is hoisting? explain with example?
+
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a; 
+
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a = 10;
+
+Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their respective scopes during the compilation phase, before the code is executed. 
+This means that regardless of where variables and functions are declared in the code, they are treated as if they are declared at the beginning of their scope.
+
+example:
+console.log(x); //output: undefined
+var x = 5;
+console.log(x); //output: 5
+
+the declaration of x is hoisted to the top, but not its initialization. That's why the first `console.log outputs undefined.
+
+let and const declarations are hoisted but not initialized. This leads to a "temporal dead zone" where accessing the variable before its declaration results in a ReferenceError.
+
+console.log(y);
+// throws ReferenceError: Cannot access 'y' before "initialization"
+let y = 10;
+
+
+16. What is promise?
+
+ - Promises Establishes the communication between "producer" and "consumer".
+ 
+        - Promises also called as "special javascript objects".
+ 
+        - we will create Promises by using "Promise" class constructor.
+ 
+        - Promises have 3 states
+ 
+            1) success  (resolve)
+ 
+            2) error    (reject)
+ 
+            3) pending
+ 
+        - we will consume promises by using "then()"
+
+/*
+    let promise1 = new Promise((resolve,reject)=>{
+        resolve("tomorrow i will discuss async & await keywords");
+    });
+    promise1.then((posRes)=>{
+        console.log(posRes);
+    },(errRes)=>{
+        console.log(errRes);
+    });     //tomorrow i will discuss async & await keywords
+*/
+
+17. What is synchronous and asynchronous calls?
+
+Synchronous calls block the program until the current task finishes. Everything happens in sequence.
+
+Asynchronous calls allow the program to continue executing while waiting for a task to complete, preventing it from freezing or being blocked.
+
+18. What operations did you perform in NodeJS?
+
+    HTTP Server: Set up basic web servers to handle requests and responses.
+
+    REST APIs: Created APIs for handling CRUD operations using Express.
+
+    File Operations: Used the fs module to read, write, and manipulate files.
+
+    Database Integration: Worked with databases (e.g., MongoDB) using libraries like Mongoose.
+
+    Event-driven: Utilized the EventEmitter for event-driven programming.
+
+    Asynchronous Programming: Managed asynchronous operations using Promises and async/await.
+
+    Middleware: Built custom middleware in Express for additional functionality (e.g., logging, authentication).
+
+Node.js offers a robust environment for developing scalable, event-driven applications and handling backend services, APIs, and tasks efficiently.
+
+19. callback hell resolve?
+
+Callback Hell can be mitigated by:
+
+    Modularizing code: Break down tasks into smaller functions.
+
+    Using Promises: Chain asynchronous operations and handle errors in a clean way.
+
+    Using Async/Await: Write asynchronous code that looks synchronous, improving readability.
+
+    Using Libraries like Async.js: Manage complex flows in a more elegant and concise way.
+
+    Using Event Emitters: For managing more complex workflows that involve multiple events.
+
+The async/await approach is generally the most modern and readable method, and it resolves the deep nesting of callbacks effectively, improving code quality and maintainability.
+
+20. What is a closure in JavaScript?
+
+    - if any inner function holding the outer function data, then such scenario called as closure.
+
+21. can we write application in redux instead of redux-saga?
+
+Yes, you can write applications using Redux without using Redux-Saga. Redux itself is a state management library, 
+while Redux-Saga is a middleware used for handling side effects (like async actions such as fetching data from an API, interacting with external services, etc.).
+
+22. what is difference redux, redux-thunk, redux-saga?
+
+Redux is for managing the state of your application.
+
+Redux-Thunk is a simple middleware for managing simple async logic like API calls or timeouts.
+
+Redux-Saga is a middleware that handles complex side effects using generator functions, making it ideal for handling advanced async logic
+(e.g., canceling tasks, running multiple tasks in parallel, and managing retries).
+
+23. explain how redux architecture works? example?
+
+Redux Data Flow
+
+    User Interaction or Events trigger an action.
+
+    The action is sent to the store using the dispatch function.
+
+    The store forwards the action to the appropriate reducer.
+
+    The reducer computes a new state based on the action.
+
+    The store updates the state with the new value.
+
+    The updated state can be accessed by React components or any part of the app.
+
+This process follows the unidirectional data flow in Redux, where actions trigger state updates, and the components re-render based on the updated state.
+
+24. what is react 19 features?
+
+The New Additional Hooks in React 19:-
+
+1. useFormStatus
+-Tracks form submission status dynamically.
+-Eliminates manual state tracking for pending operations.
+
+2. useActionState
+-Combines form actions and states into one seamless hook.
+- Perfect for server-side rendered applications.
+
+3. useOptimistic
+-Supports optimistic Ul updates for async operations.
+- Makes rollbacks smooth if operations fail.
+
+4. use
+-Brings promises and async context handling directly into components.
+-Enhances Suspense for better async rendering.
+
+25. what is useRef() hook?
+
+The useRef hook is used to access and interact with DOM elements directly and to persist mutable values across renders without causing re-renders.
+
+
+
+26. useLayoutEffect? useLayoutEffect fires before the browser repaints the screen. You can measure layout here.
+
+useLayoutEffect: Synchornous Side effects.
+
+27. what is synchronous vs asynchronous call?
+
+Synchronous Call:
+
+    A synchronous call means that the code is executed in a sequential, blocking manner. 
+    The program executes each statement one after another, waiting for the previous one to finish before moving on to the next.
+
+    In other words, each operation must complete before the next one begins.
+
+Asynchronous Call:
+
+    An asynchronous call allows certain tasks to run in the background while the program continues executing other code. 
+    It doesn't block the rest of the program, and the operation may complete at a later time.
+
+    Common asynchronous operations include fetching data from an API, setTimeout, Promises, or async/await syntax.
+
+
+React
+
+performance opt
+
+Javascript
+
+Redux
+
+==========================================================================================================================================
+
+
 
 
 
