@@ -876,7 +876,573 @@ Redux
 ==========================================================================================================================================
 
 
+TAPTIC AI interview with Cognizant
+React.js
+Javascript
+Coding question
+HTML Questions
+
+1. can you walk me through your resume.
+
+I am a core UI Developer with 12+ years of experience building .com websites for different organizations using HTML5, CSS3, JavaScript, React.js, and Redux. 
+In the past 2 years, I worked on the React migration team, where I converted the .net pages to react on united.com. 
+Frontend is React, and used ATMOS (Own library) components used company wide.
+
+Worked on Security features for users where they can manage there account like Forgot password, Forgot MileagePlus number, security questions, Sign-in features, Miles-Pooling, United Club pass,  Recent Activity, dashboard updates and KTN(Known Traveler Number), Accessibility guidelines features on united.com.
+
+used middleware such as redux-saga to handle asynchronous tasks such as API calls, data fetching, and impure actions in a more organized and efficient way.
+
+The new initiative worked on Miles-Pooling( points you get after traveling), TSA Precheck, Account security and management features, and Under18.
+
+Previously worked with Accelerator team for Visa Inc. remediation of MBDA modules like Application Management, Account Management, Portfolio Management, Analytics, Recurring billing, Virtual Terminal, etc for bank users like Wells Fargo,  Bank of America, etc
+
+Capital Group worked on DAVIS Project. Davis stands for Data visualization where we build different highcharts using react and integrate into the AEM., the backend is Java. Previously I worked on Creative Workbench, a writing tool where articles are published on capital group websites.
+
+At Cerner Corporation worked on the medical examination forms.
+
+In Office Depot worked on black Friday reporting.
+
+Satinos Technologies created a tax portal and a schoomin website for the Vignan schools.
+
+2. What is HOC?
+A higher-order function is a function that treats other functions as data, either by taking them as arguments or returning them. 
+
+
+// Higher-order function that takes a function as an argument 
+
+function operate(x, y, operation){ 
+
+    return operation(x, y); // calls the passed function with x and y 
+
+} 
+
+ 
+
+// function to be passed as arguments 
+
+const add = (a, b) => a + b; // arrow function for addition 
+
+const multiply = (a, b) => a * b; // arrow function for multiplication 
+
+ 
+
+//using higher order function 
+
+console.log(operate(5, 3, add)); // 8 
+
+console.log(operate(5,3, multiply)); // 15 
 
 
 
 
+2. What is call(), apply(), bind()?
+
+Call() -- if we want to create second memory location will interact with 1st memory location.
+
+Apply – if we want to pass array instead of independent parameter
+
+Bind() - merge memory location 1 and memory location 2 -->merge 2 memory locations-->new memory location.
+
+What is the USE? Call function advanced function APPLY, call and apply advanced version is bind().
+Purpose is same. Call, bind, apply –used to access 2 objects in different memory location
+
+
+3. What is shallow copy and deep copy?
+
+A shallow copy creates a new object with references to the same memory locations as the original object for nested properties. 
+This means changes to nested objects in the copy will affect the original object.
+
+javascript example: 
+const originalObject = { a: 1, b: { c: 2 } };
+const shallowCopy = { ...originalObject };
+
+shallowCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 3
+
+Deep Copy
+A deep copy creates a new object with new memory locations for all nested properties, ensuring changes to the copy don't affect the original object.
+
+JavaScript Example:
+
+javascript
+const originalObject = { a: 1, b: { c: 2 } };
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+deepCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 2
+
+4. how do you optimnize performance in React app?
+
+1. Memoization with useMemo and useCallback:  Use this hooks to memoize values and, reducing unnecessary recalculations.
+2. Optimizing Renders with React.Fragment: Use it to avoid unnecessary wrapper elements that could cause additional DOM nodes.
+3. Lazy loading with React.lazy: Use it to load components lazily, reducing the intial bundle size and imporving intial loading performance.
+4. Code splitting: Employ code splitting to divide your application into smaller chunks that are loaded on demand, improving initial load times.
+5. Optimizing Images and Assets:  Compress and optimize images, use responsive images and leverage lazy loading for images to reduce network and rendering overhead.
+
+
+5. What is promise.All() and race?
+Promise.all takes an array of promises and waits for all of them to resolve. 
+If any promise rejects, the entire Promise.all immediately rejects with that reason
+
+Key Points:
+Resolves when all promises are successful.
+Rejects if any promise fails.
+Returns an array of results in the same order as the input.
+
+Example:
+javascript
+
+CopyEdit
+const promise1 = Promise.resolve(1);
+const promise2 = Promise.resolve(2);
+const promise3 = Promise.resolve(3);
+
+Promise.all([promise1, promise2, promise3])
+  .then(results => console.log(results))  // [1, 2, 3]
+  .catch(err => console.error(err));
+
+
+6. What is callback hell? how to avoid it?
+Callback hell" refers to a situation in programming where multiple asynchronous operations are handled using nested callback functions,
+creating a complex and difficult-to-read code structure, often resembling a pyramid shape; 
+to avoid it, use techniques like Promises and the async/await syntax to manage asynchronous operations in a more linear fashion,
+making your code cleaner and easier to maintain. 
+
+
+7. What is virtual DOM? example?
+Suppose line of code is changed , processing is done on particular line. 
+It will process the whole code in real DOM. Virtual DOM is faster.
+
+8. How do you integrate API in front end?
+To integrate an API in a React.js frontend application, you'll typically use the fetch API or
+a library like Axios to make HTTP requests, handle responses, and then display the data in your React components
+
+
+9. If the network request --> API response is 400 ? how do you proceed?
+Test API endpoint in Postman or similar tools to isolate frontend vs. backend issues
+Check for network connectivity problems
+Verify the API base URL is correct for the environment (dev/staging/prod)
+
+
+10. what is local storage and session storage? advantages?
+
+Session Storage and Local Storage are both part of the Web Storage API that allow you to store key-value pairs in a user's browser, but they have different use cases and lifecycles.
+1. Session Storage
+Scope: Per tab or window. Data is only available for the duration of the page session.
+Lifetime: Cleared when the tab or browser is closed.
+Capacity: ~5MB (varies by browser).
+Access: Same-origin policy — only accessible from pages with the same protocol, host, and port.
+Use Cases:
+Temporary data like form inputs, filters, or UI states that shouldn't persist after the session ends.
+Storing data that shouldn't be shared across tabs/windows.
+Example:
+javascript
+CopyEdit
+// Set item
+sessionStorage.setItem("user", "John");
+
+// Get item
+let user = sessionStorage.getItem("user");
+
+// Remove item
+sessionStorage.removeItem("user");
+
+
+2. Local Storage
+Scope: Per domain. Data is persistent across sessions and tabs.
+Lifetime: Remains even after closing the browser, until explicitly cleared.
+Capacity: ~5-10MB (varies by browser).
+Access: Same-origin policy.
+Use Cases:
+Persistent user preferences (e.g., theme settings).
+Caching data (e.g., API responses) for faster page loads.
+Shopping cart data in e-commerce sites.
+Example:
+javascript
+CopyEdit
+// Set item
+localStorage.setItem("theme", "dark");
+
+// Get item
+let theme = localStorage.getItem("theme");
+
+// Remove item
+localStorage.removeItem("theme");
+
+
+
+11. What is code splitting?
+
+Code Splitting in React
+Code splitting is a technique that breaks your app into smaller chunks (bundles) that can be loaded on demand, 
+improving initial load performance. Here's how to implement it in React:
+
+React.lazy and Suspense
+The most common approach using React's built-in features:
+jsx
+Copy
+import React, { Suspense, lazy } from 'react';
+
+// Instead of: import ExpensiveComponent from './ExpensiveComponent';
+const ExpensiveComponent = lazy(() => import('./ExpensiveComponent'));
+
+function App() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ExpensiveComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+}
+
+
+
+12. What is asynchronous and synchronous operations?
+
+
+13. What is connect?
+
+
+14. What is controlled and uncontrolled components?
+
+Characteristics of Controlled Components:
+Form values are stored in React state
+Changes are handled through event handlers
+The component explicitly sets and updates the input value
+More predictable as React controls the input state at all times
+Enables immediate validation, conditional disabling, and formatting
+
+Characteristics of Uncontrolled Components:
+Form values are stored in the DOM, not in React state
+Accessed using refs rather than event handlers
+Uses defaultValue instead of value for initial values
+Simpler code with less boilerplate for basic forms
+Helpful when integrating with non-React code
+
+
+
+15. coding question
+//"programming" string - 
+//find the first duplicate character from given string.
+
+
+
+
+//"programming" string - 
+//find the first duplicate character from given string.
+
+const findduplicate = (str) =>{
+  const chars = [];
+  let charFound = null;
+  for(let i = 0 ; i < str.length; i++){
+    if(chars.includes(str[i])){
+        charFound = str[i]
+    }else{
+      chars.push(str[i])
+    }
+
+    
+     console.log("debug", chars , charFound, str[i])
+     if(charFound) break;
+
+  }
+  return charFound;
+}
+
+console.log(findduplicate("apple"));
+
+
+
+
+
+promise.all()
+
+
+===========================================================================================================
+
+TAPTIC AI interview with Cognizant
+React.js
+Javascript
+Coding question
+HTML Questions
+
+1. can you walk me through your resume.
+
+I am a core UI Developer with 12+ years of experience building .com websites for different organizations using HTML5, CSS3, JavaScript, React.js, and Redux. 
+In the past 2 years, I worked on the React migration team, where I converted the .net pages to react on united.com. 
+Frontend is React, and used ATMOS (Own library) components used company wide.
+
+Worked on Security features for users where they can manage there account like Forgot password, Forgot MileagePlus number, security questions, Sign-in features, Miles-Pooling, United Club pass,  Recent Activity, dashboard updates and KTN(Known Traveler Number), Accessibility guidelines features on united.com.
+
+used middleware such as redux-saga to handle asynchronous tasks such as API calls, data fetching, and impure actions in a more organized and efficient way.
+
+The new initiative worked on Miles-Pooling( points you get after traveling), TSA Precheck, Account security and management features, and Under18.
+
+Previously worked with Accelerator team for Visa Inc. remediation of MBDA modules like Application Management, Account Management, Portfolio Management, Analytics, Recurring billing, Virtual Terminal, etc for bank users like Wells Fargo,  Bank of America, etc
+
+Capital Group worked on DAVIS Project. Davis stands for Data visualization where we build different highcharts using react and integrate into the AEM., the backend is Java. Previously I worked on Creative Workbench, a writing tool where articles are published on capital group websites.
+
+At Cerner Corporation worked on the medical examination forms.
+
+In Office Depot worked on black Friday reporting.
+
+Satinos Technologies created a tax portal and a schoomin website for the Vignan schools.
+
+2. What is HOC?
+A higher-order function is a function that treats other functions as data, either by taking them as arguments or returning them. 
+
+
+// Higher-order function that takes a function as an argument 
+
+function operate(x, y, operation){ 
+
+    return operation(x, y); // calls the passed function with x and y 
+
+} 
+
+ 
+
+// function to be passed as arguments 
+
+const add = (a, b) => a + b; // arrow function for addition 
+
+const multiply = (a, b) => a * b; // arrow function for multiplication 
+
+ 
+
+//using higher order function 
+
+console.log(operate(5, 3, add)); // 8 
+
+console.log(operate(5,3, multiply)); // 15 
+
+
+
+
+2. What is call(), apply(), bind()?
+
+Call() -- if we want to create second memory location will interact with 1st memory location.
+
+Apply – if we want to pass array instead of independent parameter
+
+Bind() - merge memory location 1 and memory location 2 -->merge 2 memory locations-->new memory location.
+
+What is the USE? Call function advanced function APPLY, call and apply advanced version is bind().
+Purpose is same. Call, bind, apply –used to access 2 objects in different memory location
+
+
+3. What is shallow copy and deep copy?
+
+A shallow copy creates a new object with references to the same memory locations as the original object for nested properties. 
+This means changes to nested objects in the copy will affect the original object.
+
+javascript example: 
+const originalObject = { a: 1, b: { c: 2 } };
+const shallowCopy = { ...originalObject };
+
+shallowCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 3
+
+Deep Copy
+A deep copy creates a new object with new memory locations for all nested properties, ensuring changes to the copy don't affect the original object.
+
+JavaScript Example:
+
+javascript
+const originalObject = { a: 1, b: { c: 2 } };
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+deepCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 2
+
+4. how do you optimnize performance in React app?
+
+1. Memoization with useMemo and useCallback:  Use this hooks to memoize values and, reducing unnecessary recalculations.
+2. Optimizing Renders with React.Fragment: Use it to avoid unnecessary wrapper elements that could cause additional DOM nodes.
+3. Lazy loading with React.lazy: Use it to load components lazily, reducing the intial bundle size and imporving intial loading performance.
+4. Code splitting: Employ code splitting to divide your application into smaller chunks that are loaded on demand, improving initial load times.
+5. Optimizing Images and Assets:  Compress and optimize images, use responsive images and leverage lazy loading for images to reduce network and rendering overhead.
+
+
+5. What is promise.All() and race?
+Promise.all takes an array of promises and waits for all of them to resolve. 
+If any promise rejects, the entire Promise.all immediately rejects with that reason
+
+Key Points:
+Resolves when all promises are successful.
+Rejects if any promise fails.
+Returns an array of results in the same order as the input.
+
+Example:
+javascript
+
+CopyEdit
+const promise1 = Promise.resolve(1);
+const promise2 = Promise.resolve(2);
+const promise3 = Promise.resolve(3);
+
+Promise.all([promise1, promise2, promise3])
+  .then(results => console.log(results))  // [1, 2, 3]
+  .catch(err => console.error(err));
+
+
+6. What is callback hell? how to avoid it?
+Callback hell" refers to a situation in programming where multiple asynchronous operations are handled using nested callback functions,
+creating a complex and difficult-to-read code structure, often resembling a pyramid shape; 
+to avoid it, use techniques like Promises and the async/await syntax to manage asynchronous operations in a more linear fashion,
+making your code cleaner and easier to maintain. 
+
+
+7. What is virtual DOM? example?
+Suppose line of code is changed , processing is done on particular line. 
+It will process the whole code in real DOM. Virtual DOM is faster.
+
+8. How do you integrate API in front end?
+To integrate an API in a React.js frontend application, you'll typically use the fetch API or
+a library like Axios to make HTTP requests, handle responses, and then display the data in your React components
+
+
+9. If the network request --> API response is 400 ? how do you proceed?
+Test API endpoint in Postman or similar tools to isolate frontend vs. backend issues
+Check for network connectivity problems
+Verify the API base URL is correct for the environment (dev/staging/prod)
+
+
+10. what is local storage and session storage? advantages?
+
+Session Storage and Local Storage are both part of the Web Storage API that allow you to store key-value pairs in a user's browser, but they have different use cases and lifecycles.
+1. Session Storage
+Scope: Per tab or window. Data is only available for the duration of the page session.
+Lifetime: Cleared when the tab or browser is closed.
+Capacity: ~5MB (varies by browser).
+Access: Same-origin policy — only accessible from pages with the same protocol, host, and port.
+Use Cases:
+Temporary data like form inputs, filters, or UI states that shouldn't persist after the session ends.
+Storing data that shouldn't be shared across tabs/windows.
+Example:
+javascript
+CopyEdit
+// Set item
+sessionStorage.setItem("user", "John");
+
+// Get item
+let user = sessionStorage.getItem("user");
+
+// Remove item
+sessionStorage.removeItem("user");
+
+
+2. Local Storage
+Scope: Per domain. Data is persistent across sessions and tabs.
+Lifetime: Remains even after closing the browser, until explicitly cleared.
+Capacity: ~5-10MB (varies by browser).
+Access: Same-origin policy.
+Use Cases:
+Persistent user preferences (e.g., theme settings).
+Caching data (e.g., API responses) for faster page loads.
+Shopping cart data in e-commerce sites.
+Example:
+javascript
+CopyEdit
+// Set item
+localStorage.setItem("theme", "dark");
+
+// Get item
+let theme = localStorage.getItem("theme");
+
+// Remove item
+localStorage.removeItem("theme");
+
+
+
+11. What is code splitting?
+
+Code Splitting in React
+Code splitting is a technique that breaks your app into smaller chunks (bundles) that can be loaded on demand, 
+improving initial load performance. Here's how to implement it in React:
+
+React.lazy and Suspense
+The most common approach using React's built-in features:
+jsx
+Copy
+import React, { Suspense, lazy } from 'react';
+
+// Instead of: import ExpensiveComponent from './ExpensiveComponent';
+const ExpensiveComponent = lazy(() => import('./ExpensiveComponent'));
+
+function App() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ExpensiveComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+}
+
+
+
+12. What is asynchronous and synchronous operations?
+
+
+13. What is connect?
+
+
+14. What is controlled and uncontrolled components?
+
+Characteristics of Controlled Components:
+Form values are stored in React state
+Changes are handled through event handlers
+The component explicitly sets and updates the input value
+More predictable as React controls the input state at all times
+Enables immediate validation, conditional disabling, and formatting
+
+Characteristics of Uncontrolled Components:
+Form values are stored in the DOM, not in React state
+Accessed using refs rather than event handlers
+Uses defaultValue instead of value for initial values
+Simpler code with less boilerplate for basic forms
+Helpful when integrating with non-React code
+
+
+
+15. coding question
+//"programming" string - 
+//find the first duplicate character from given string.
+
+
+
+
+//"programming" string - 
+//find the first duplicate character from given string.
+
+const findduplicate = (str) =>{
+  const chars = [];
+  let charFound = null;
+  for(let i = 0 ; i < str.length; i++){
+    if(chars.includes(str[i])){
+        charFound = str[i]
+    }else{
+      chars.push(str[i])
+    }
+
+    
+     console.log("debug", chars , charFound, str[i])
+     if(charFound) break;
+
+  }
+  return charFound;
+}
+
+console.log(findduplicate("apple"));
+
+
+
+
+
+promise.all()
