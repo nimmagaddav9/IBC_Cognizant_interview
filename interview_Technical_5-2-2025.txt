@@ -1,0 +1,188 @@
+technical interview questions
+-----------------------------------------
+
+1. tell me about yourself?
+
+2. which version of react.js are using? v16.8, react 18, v19 dec 5th, 2024
+
+3. what is async await?
+
+In JavaScript, async and await are used to handle asynchronous operations in a more readable and manageable way, replacing traditional callback-based approaches.
+
+Explanation
+async function: Declares that a function returns a Promise, allowing you to use await inside it.
+
+await keyword: Pauses execution until a Promise resolves, making asynchronous code look more like synchronous code.
+
+Key Benefits
+Makes asynchronous code easier to read.
+
+Helps avoid callback hell.
+
+Improves error handling with try-catch.
+
+4.  what is synchronous vs asychronous?
+
+Synchronous Code
+Executes line by line, meaning each operation must finish before the next one starts.
+
+Blocking: If one task takes a long time, everything after it waits.
+
+
+Asynchronous Code
+Executes without waiting for a previous task to complete.
+
+Non-blocking: Tasks can run independently, allowing multiple operations to happen simultaneously.
+
+Often uses callbacks, Promises, or async/await.
+
+5. how to call multiple api calls simunatenously?
+
+You can call multiple API requests simultaneously using Promise.all, Promise.allSettled, or async/await with parallel execution. 
+
+Using Promise.all (Best for Successful Responses)
+
+✅ Executes all requests in parallel ❌ Fails completely if one request errors out
+
+
+
+Using Promise.allSettled (Handles Errors Gracefully)
+
+✅ All requests execute, even if some fail ✅ Provides individual success/failure reports
+
+
+
+Using async/await with Parallel Execution
+✅ Parallel execution without Promise.all ✅ More control over individual responses
+
+Which One Should You Use?
+Use Promise.all when all API calls must succeed together.
+
+Use Promise.allSettled when you want results even if some APIs fail.
+
+Use async/await for a more manual approach with better readability.
+
+6. what is controlled and uncontrolled components?
+
+Use controlled components for most cases where React state should manage inputs.
+
+Use uncontrolled components if you need direct DOM access or lightweight components.
+
+7. what is Debouncing ?
+
+Debouncing is a technique used to improve performance by limiting the rate at which a function executes. 
+It ensures that a function (typically event handlers like input changes, scrolling, or resizing) only runs after a specified delay, preventing unnecessary executions.
+
+8. What is useEffect hook?
+The useEffect hook in React is a powerful tool used for managing side effects in functional components.
+It allows you to run logic after the component renders, handling things like data fetching, subscriptions, or updating the DOM.
+
+How Does useEffect Work?
+It executes after the component renders.
+
+Can run once, on updates, or on cleanup—depending on dependencies.
+
+Helps avoid unnecessary logic inside the main component body.
+
+9. did you work on custom hooks?
+A custom hook in React is a reusable function that encapsulates logic using other React hooks (useState, useEffect, etc.). 
+It allows you to extract common behavior from components and keep them clean and maintainable.
+
+Common Use Cases for Custom Hooks
+API calls (useFetch)
+
+Local storage management (useLocalStorage)
+
+Form validation
+
+Handling authentication
+
+Debouncing functions
+
+
+10. how to make api call without useEffect?
+
+You can make API calls in React without using useEffect by triggering them inside event handlers, functions, or lifecycle methods in class components.
+
+11. What is promise.All() and race?
+
+Both Promise.all and Promise.race are useful methods for handling multiple promises in JavaScript, but they behave differently.
+
+Promise.all (Waits for All Promises to Resolve)
+Promise.race (Returns the First Settled Promise)
+
+12. How do you integrate 2 API in front end with useEffect?
+
+Use Promise.all inside one useEffect → When both APIs need to be fetched together.
+
+Use multiple useEffect hooks → When API calls are independent.
+
+13. How Do Uncontrolled Components Work?
+
+The value of an input field is stored directly in the DOM.
+
+React does not track state updates for the input field.
+
+You access the current value when needed, usually via useRef.
+
+14. redux architecture? 
+
+Redux is a state management library for JavaScript applications, commonly used with React. 
+It follows a predictable, unidirectional data flow, making state management more manageable, especially for large applications.
+
+Redux Data Flow
+Redux follows a structured flow to ensure predictable state updates:
+
+1️⃣ Action → Describes what happens (e.g., "ADD_ITEM"). 
+2️⃣ Reducer → Handles the action and updates state. 
+3️⃣ Store → Holds the global application state. 
+4️⃣ View (React Component) → Receives state data and dispatches actions.
+
+15. what is == vs ===
+
+== and === are comparison operators, but they behave differently in terms of type coercion.
+
+Which One Should You Use?
+
+Use === (strict equality) in most cases to avoid unexpected behavior.
+
+Use == only when intentional type conversion is required.
+
+16. can you explain your implementation
+// write code for 1 text field, enter the data.
+// display table product id, name, description
+//top of table display text field and search button - click on search need to show table with hardcode data.
+
+17. have you worked as a LEAD?
+
+"Yes, I’ve worked as a lead on multiple React projects. 
+I was responsible for guiding the team on best practices, making architectural decisions, and ensuring scalable and maintainable code. 
+I also mentored junior developers and conducted code reviews to maintain high coding standards. 
+My role involved close collaboration with stakeholders to align development with business goals."
+
+18. what is return and commit in JSX?
+
+return is essential in JSX—it defines the UI a component renders.
+
+commit is part of React’s internal lifecycle—it happens when React applies changes to the DOM.
+
+Developers rarely interact with "commit" directly, but useEffect runs after React commits updates.
+
+19. What is map()? and reduce()?
+
+Use map() when transforming each item (e.g., formatting names, adjusting values).
+
+Use reduce() when combining data into a single result (e.g., summing prices, merging arrays).
+
+20. what is the output of map()?
+
+The output of map() is always a new array with transformed elements based on the function provided.
+
+✅ The original array remains unchanged ✅ The new array contains modified elements
+
+Key Takeaways
+map() always returns a new array (original array stays untouched).
+
+The number of elements remains the same, unless explicitly modified.
+
+Works well for transforming data (e.g., formatting, extracting values, modifying structures).
